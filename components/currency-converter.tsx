@@ -98,16 +98,13 @@ export default function CurrencyConverter() {
             <Button variant="ghost" size="icon" onClick={handleRefresh} disabled={isLoading} title="Atualizar taxa">
               <RefreshCw className={`h-5 w-5 ${isLoading ? "animate-spin" : ""}`} />
             </Button>
-            <Button variant="ghost" size="icon">
-              <Share2 className="h-5 w-5" />
-            </Button>
           </div>
         </div>
         <h2 className="text-4xl font-bold text-gray-900 mt-1">
           {isLoading ? "Carregando..." : `${exchangeRate.toFixed(2)} Real brasileiro`}
         </h2>
         <p className="text-sm text-gray-500 mt-1">
-          {lastUpdated ? `${lastUpdated} · Fonte: API de Câmbio` : "Atualizando..."}
+          {lastUpdated ? `${lastUpdated} · Fonte: Exchange-rate API` : "Atualizando..."}
         </p>
         {error && <p className="text-sm text-red-500 mt-1">{error}</p>}
       </CardHeader>
